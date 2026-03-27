@@ -76,6 +76,14 @@ plt.xlabel("Predicted Price ($)")
 plt.ylabel("Residuals ($)")
 plt.grid(True)
 plt.show()
+
+fig,(ax1,ax2)=plt.subplots(1,2,figsize=(12,5))
+sns.histplot(residuals,kde=True,ax=ax1)
+ax1.set_title("Residuals Distrubution")
+sm.qqplot(residuals,line='45',fit=True,ax=ax2)
+ax2.set_title("Q-Q Plot")
+plt.tight_layout()
+plt.show()
 /*
  Program to implement linear regression model for predicting car prices and test assumptions.
    Developed by:V SURUTHIKA 
